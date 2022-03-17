@@ -19,7 +19,7 @@ const Activity = () => {
         if(isFree === true){
             myParams.price = "0.0"
         }
-        const response = await axios.get(`http://www.boredapi.com/api/act3252ivity`,
+        const response = await axios.get(`http://www.boredapi.com/api/activity`,
         { params:myParams })
         setActivity(response.data);
     }
