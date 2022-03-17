@@ -38,8 +38,6 @@ const Activity = () => {
         let response = await fetch(`http://www.boredapi.com/api/activity/${query}`);
         let json = await response.json();
         setActivity(json);
-
-        setActivity(response.data);
         //Lägg in json i state
     }
     let listOfTypes = ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]
