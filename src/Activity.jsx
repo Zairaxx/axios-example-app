@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+
 const Activity = () => {
 
     const [activity, setActivity] = useState(null);
@@ -35,18 +35,10 @@ const Activity = () => {
             }
         }
 
-        // let response = await fetch(`http://www.boredapi.com/api/activity/${query}`);
-        // let json = await response.json();
-        // setActivity(json);
+        let response = await fetch(`http://www.boredapi.com/api/activity/${query}`);
+        let json = await response.json();
+        setActivity(json);
 
-        const response = await axios.get(`http://www.boredapi.com/api/activity`,
-        {
-            params:{
-                type:"education",
-                price:"0.0",
-                participants:"1"
-            }
-        })
         setActivity(response.data);
         //Lägg in json i state
     }
